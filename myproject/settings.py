@@ -39,16 +39,12 @@ INSTALLED_APPS = [
     "nagoyameshi",
     "accounts",
 
-'cloudinary',
-'cloudinary_storage',
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
 ]
 
 #↓↓↓↓↓追記↓↓↓↓↓
@@ -155,10 +151,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 #↓追加
-"""
 if DEBUG:
     STATICFILES_DIRS = [ BASE_DIR / "static" ]
-"""
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -190,8 +184,8 @@ if "STRIPE_PUBLISHABLE_KEY" in os.environ and "STRIPE_API_KEY" in os.environ and
 if not DEBUG:
 
     #INSTALLED_APPSにcloudinaryの追加
-    #INSTALLED_APPS.append('cloudinary')
-    #INSTALLED_APPS.append('cloudinary_storage')
+    INSTALLED_APPS.append('cloudinary')
+    INSTALLED_APPS.append('cloudinary_storage')
 
     # ALLOWED_HOSTSにホスト名)を入力
     ALLOWED_HOSTS = [ os.environ["HOST"] ]
