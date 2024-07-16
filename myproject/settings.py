@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     "nagoyameshi",
     "accounts.apps.AccountsConfig",
 
-
 ]
 
 #↓↓↓↓↓追記↓↓↓↓↓
