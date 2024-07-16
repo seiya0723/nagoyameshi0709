@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -25,7 +24,7 @@ SECRET_KEY = 'django-insecure-6=-z^47-j(htc()ir7x%_*6%@d&a8o4r%!_yifkkzd(q-hp=d^
 # SECURITY WARNING: don't run with debug turned on in production!
 # 開発中は DEBUG=True とする
 # デプロイをする時、DEBUG=False
-DEBUG = True
+DEBUG = False
 
 # DEBUG = True の場合。ページにエラーメッセージが表示される。
 # DEBUG = False の場合。エラーメッセージは表示されない(エラーメッセージが部外者に確認できると、セキュリティ上問題あり。)
@@ -53,7 +52,6 @@ INSTALLED_APPS = [
 ]
 
 #↓↓↓↓↓追記↓↓↓↓↓
-
 #DEBUGがTrueのとき、メールの内容は全て端末に表示させる
 if DEBUG:
     EMAIL_BACKEND   = "django.core.mail.backends.console.EmailBackend"
@@ -179,7 +177,6 @@ from .local_settings import *
 """
 
 
-
 # APIキーは、環境変数を使って呼び出す。
 import os
 
@@ -242,12 +239,6 @@ if not DEBUG:
             'API_SECRET': os.environ["API_SECRET"],
             "SECURE"    : True,
             }
-
-    #これは画像だけ(上限20MB)
-    #DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-    #これは動画だけ(上限100MB)
-    #DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.VideoMediaCloudinaryStorage'
 
     #これで全てのファイルがアップロード可能(上限20MB。ビュー側でアップロードファイル制限するなら基本これでいい)
     DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
