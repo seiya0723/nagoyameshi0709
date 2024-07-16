@@ -37,8 +37,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "nagoyameshi.apps.NagoyameshiConfig",
-    "accounts.apps.AccountsConfig",
+    "nagoyameshi",
+    "accounts",
 
 'cloudinary',
 'cloudinary_storage',
@@ -190,7 +190,7 @@ if "STRIPE_PUBLISHABLE_KEY" in os.environ and "STRIPE_API_KEY" in os.environ and
 
 
 # Herokuデプロイ仕様の設定
-if  DEBUG:
+if not DEBUG:
 
     #INSTALLED_APPSにcloudinaryの追加
     #INSTALLED_APPS.append('cloudinary')
@@ -217,7 +217,6 @@ if  DEBUG:
     STATIC_ROOT = BASE_DIR / 'static'
 
     # DBの設定
-    """
     DATABASES = { 
             'default': {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -235,7 +234,6 @@ if  DEBUG:
 
     db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
     DATABASES['default'].update(db_from_env)
-    """
 
     #cloudinaryの設定
     CLOUDINARY_STORAGE = { 
