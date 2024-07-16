@@ -37,15 +37,18 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "nagoyameshi.apps.NagoyameshiConfig",
+    "accounts.apps.AccountsConfig",
+
+'cloudinary',
+'cloudinary_storage',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    "nagoyameshi.apps.NagoyameshiConfig",
-    "accounts.apps.AccountsConfig",
 
 ]
 
@@ -190,8 +193,8 @@ if "STRIPE_PUBLISHABLE_KEY" in os.environ and "STRIPE_API_KEY" in os.environ and
 if  DEBUG:
 
     #INSTALLED_APPSにcloudinaryの追加
-    INSTALLED_APPS.append('cloudinary')
-    INSTALLED_APPS.append('cloudinary_storage')
+    #INSTALLED_APPS.append('cloudinary')
+    #INSTALLED_APPS.append('cloudinary_storage')
 
     # ALLOWED_HOSTSにホスト名)を入力
     ALLOWED_HOSTS = [ os.environ["HOST"] ]
