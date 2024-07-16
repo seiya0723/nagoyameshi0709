@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    "nagoyameshi",
+    "nagoyameshi.apps.NagoyameshiConfig",
     "accounts.apps.AccountsConfig",
 
 ]
