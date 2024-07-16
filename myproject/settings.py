@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-6=-z^47-j(htc()ir7x%_*6%@d&a8o4r%!_yifkkzd(q-hp=d^
 # SECURITY WARNING: don't run with debug turned on in production!
 # 開発中は DEBUG=True とする
 # デプロイをする時、DEBUG=False
-DEBUG = True
+DEBUG = False
 
 # DEBUG = True の場合。ページにエラーメッセージが表示される。
 # DEBUG = False の場合。エラーメッセージは表示されない(エラーメッセージが部外者に確認できると、セキュリティ上問題あり。)
