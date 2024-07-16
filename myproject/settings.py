@@ -187,7 +187,7 @@ if "STRIPE_PUBLISHABLE_KEY" in os.environ and "STRIPE_API_KEY" in os.environ and
 
 
 # Herokuデプロイ仕様の設定
-if not DEBUG:
+if  DEBUG:
 
     #INSTALLED_APPSにcloudinaryの追加
     INSTALLED_APPS.append('cloudinary')
